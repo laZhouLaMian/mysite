@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Task Detail</title>
+  </head>
+  <body>
+    <p>{{task}}</p>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_div }}
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
