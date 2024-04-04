@@ -3,6 +3,9 @@
     <title>Task Detail</title>
   </head>
   <body>
+    {% if object.task_image %}
+    <img src="{{ object.task_image.url }}" alt="">
+    {% endif %}
     <p>{{task}}</p>
     <form method="POST">
       {% csrf_token %}

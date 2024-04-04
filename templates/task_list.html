@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!-- <html>
   <head>
     <title>Task List</title>
@@ -44,11 +45,18 @@
   </body>
 </html> -->
 
+
+{% load static %}
+{% block page_title %}Task List {% endblock %}
+{% block styles %}{% endblock %}
+{% block main %}
 <html>
   <head>
     <title>Task List</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
   <body>
+    <!-- <img src="{% static 'img/asdf.jpg' %}" alt=""> -->
     {% if request.user.is_authenticated %}
     <h1>hello {{request.user.username}}</h1>
     <form form action="{% url 'logout' %}" method="POST">
@@ -73,3 +81,5 @@
     </form>
   </body>
 </html>
+{% endblock %}
+{% block scripts %}{% endblock %}
